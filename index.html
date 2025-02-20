@@ -112,6 +112,15 @@
                 cursor: true,
             }).go();
         }, 2000); // 2 second delay
+
+        // Second line animation (starts after delay)
+        setTimeout(() => {
+            new TypeIt("#line3", {
+                strings: "Stay tuned 😃",
+                speed: 50,
+                cursor: true,
+            }).go();
+        }, 2000); // 2 second delay
     });
 </script>
 
