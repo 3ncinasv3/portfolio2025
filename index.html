@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Terminal Animation</title>
+    <!-- Include TypeIt library -->
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+    <style>
+        /* Basic styling */
+        body {
+            background-color: #1E1E1E;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: monospace;
+        }
+
+        .terminal {
+            background-color: #2D2D2D;
+            padding: 20px;
+            border-radius: 10px;
+            width: 600px;
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .red {
+            background-color: #FF5F56;
+        }
+
+        .yellow {
+            background-color: #FFBD2E;
+        }
+
+        .green {
+            background-color: #27C93F;
+        }
+
+        .terminal-content {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .chevron {
+            color: #27C93F;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="pIndex.html" style="text-decoration: none">
+        <div class="terminal">
+            <!-- Terminal dots -->
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+
+            <!-- Terminal content -->
+            <div class="terminal-content">
+                <div class="line">
+                    <span class="chevron">></span>
+                    <span id="line1"></span>
+                </div>
+                <div class="line">
+                    <span class="chevron">></span>
+                    <span id="line2"></span>
+                </div>
+            </div>
+        </div>
+    </a>
+</body>
+
+
+<script>
+    // Start typing animation when page loads
+    document.addEventListener('DOMContentLoaded', function () {
+        // First line animation
+        new TypeIt("#line1", {
+            strings: "Hi, I'm Joshua",
+            speed: 50,
+            cursor: true,
+        }).go();
+
+   
+
+        // Second line animation (starts after delay)
+        setTimeout(() => {
+            new TypeIt("#line2", {
+                strings: "I like making fun, interactive things",
+                speed: 50,
+                cursor: true,
+            }).go();
+        }, 2000); // 2 second delay
+    });
+</script>
+
+
+</html>
